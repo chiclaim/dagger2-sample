@@ -1,8 +1,12 @@
 package com.chiclaim.dagger.sample.presenter;
 
 
+import android.util.Log;
+
 import com.chiclaim.dagger.sample.Callback;
 import com.chiclaim.dagger.sample.bean.MenuBalance;
+import com.chiclaim.dagger.sample.dagger.Category;
+import com.chiclaim.dagger.sample.dagger.Username;
 import com.chiclaim.dagger.sample.model.MenuBalanceRepository;
 import com.chiclaim.dagger.sample.view.IAddMenuBalanceView;
 
@@ -14,14 +18,21 @@ public class AddMenuBalancePresenter implements IAddMenuBalancePresenter {
 
     private final MenuBalanceRepository mMenuBalanceRepository;
 
+    private final String mCategoryName;
+
+    private final String mUsername;
+
     @Inject
-    AddMenuBalancePresenter(IAddMenuBalanceView view, MenuBalanceRepository mMenuBalanceRepository) {
+    AddMenuBalancePresenter(@Username String username, @Category String categoryName, IAddMenuBalanceView view, MenuBalanceRepository mMenuBalanceRepository) {
+        this.mUsername = username;
+        this.mCategoryName = categoryName;
         this.mView = view;
         this.mMenuBalanceRepository = mMenuBalanceRepository;
     }
 
     @Override
     public void addMenuBalance() {
+        Log.d("AddMenuBalancePresenter", "add menu in category " + mCategoryName + " by " + mUsername);
         mMenuBalanceRepository.addMenuBalance(new Callback<MenuBalance>() {
             @Override
             public void onSuccess(MenuBalance data) {

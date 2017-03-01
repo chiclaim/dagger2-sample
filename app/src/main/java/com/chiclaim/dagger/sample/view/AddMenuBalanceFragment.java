@@ -32,12 +32,11 @@ public class AddMenuBalanceFragment extends Fragment implements IAddMenuBalanceV
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         DaggerAddMenuBalanceComponent.builder()
                 .menuBalanceRepoComponent(ComponentManager.getInstance().getMenuBalanceRepoComponent())
-                .addMenuBalancePresenterModule(new AddMenuBalancePresenterModule(this))
+                .addMenuBalancePresenterModule(new AddMenuBalancePresenterModule("Chiclaim","湘菜", this))
                 .build()
-                .inject(this);
+                .inject(this);//完成注入
     }
 
     @Nullable

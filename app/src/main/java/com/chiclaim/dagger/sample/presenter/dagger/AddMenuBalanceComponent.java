@@ -5,6 +5,7 @@ import com.chiclaim.dagger.sample.model.dagger.MenuBalanceRepoComponent;
 import com.chiclaim.dagger.sample.view.AddMenuBalanceFragment;
 
 import dagger.Component;
+
 @FragmentScoped
 @Component(dependencies = MenuBalanceRepoComponent.class, modules = AddMenuBalancePresenterModule.class)
 public interface AddMenuBalanceComponent {

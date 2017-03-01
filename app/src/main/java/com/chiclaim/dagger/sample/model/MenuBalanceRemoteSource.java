@@ -18,7 +18,7 @@ public class MenuBalanceRemoteSource implements IMenuBalanceSource {
             @Override
             protected MenuBalance doInBackground(Void... params) {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     callback.onFailed(e.getMessage());
