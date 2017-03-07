@@ -14,7 +14,7 @@ public class AddMenuBalanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_framelayout);
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.content, new AddMenuBalanceFragment()).commit();
+                .add(R.id.content, new AddMenuBalanceFragment2()).commit();
     }
 
 

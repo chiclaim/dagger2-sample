@@ -3,30 +3,20 @@ package com.chiclaim.dagger.sample.presenter;
 
 import com.chiclaim.dagger.sample.Callback;
 import com.chiclaim.dagger.sample.bean.MenuBalance;
-import com.chiclaim.dagger.sample.model.MenuBalanceRepository;
+import com.chiclaim.dagger.sample.model.MenuBalanceRepository2;
 import com.chiclaim.dagger.sample.view.IAddMenuBalanceView;
 
 import javax.inject.Inject;
 
-public class AddMenuBalancePresenter implements IAddMenuBalancePresenter {
+public class AddMenuBalancePresenter2 implements IAddMenuBalancePresenter {
 
     private final IAddMenuBalanceView mView;
 
-    private final MenuBalanceRepository mMenuBalanceRepository;
+    private final MenuBalanceRepository2 mMenuBalanceRepository;
 
-//    private final String mCategoryName;
-//    private final String mUsername;
-
-//    @Inject
-//    AddMenuBalancePresenter(@Username String username, @Category String categoryName, IAddMenuBalanceView view, MenuBalanceRepository mMenuBalanceRepository) {
-//        this.mUsername = username;
-//        this.mCategoryName = categoryName;
-//        this.mView = view;
-//        this.mMenuBalanceRepository = mMenuBalanceRepository;
-//    }
 
     @Inject
-    AddMenuBalancePresenter(IAddMenuBalanceView view, MenuBalanceRepository mMenuBalanceRepository) {
+    AddMenuBalancePresenter2(IAddMenuBalanceView view, MenuBalanceRepository2 mMenuBalanceRepository) {
         this.mView = view;
         this.mMenuBalanceRepository = mMenuBalanceRepository;
     }
